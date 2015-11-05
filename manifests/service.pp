@@ -40,6 +40,7 @@ class docker::service (
   $no_proxy         = $docker::no_proxy,
   $execdriver       = $docker::execdriver,
   $storage_driver   = $docker::storage_driver,
+  $dm_basesize      = $docker::dm_basesize,
   $tmp_dir          = $docker::tmp_dir,
   $nowarn_kernel    = $docker::nowarn_kernel,
 ) {
