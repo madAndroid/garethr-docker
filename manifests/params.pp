@@ -78,7 +78,7 @@ class docker::params {
       case $::operatingsystem {
         'Ubuntu' : {
           $package_release = "ubuntu-${::lsbdistcodename}"
-          if (versioncmp($::operatingsystemrelease, '15.04') >= 0) {
+          if (versioncmp($::operatingsystemrelease, '16.04') >= 0) {
             $service_provider        = 'systemd'
             $storage_config          = '/etc/default/docker-storage'
             $service_config_template = 'docker/etc/sysconfig/docker.systemd.erb'
@@ -125,7 +125,7 @@ class docker::params {
       $package_key_source = 'http://apt.dockerproject.org/gpg'
       $package_key = '58118E89F3A912897C070ADBF76221572C52609D'
 
-      if ($::operatingsystem == 'Debian' and versioncmp($::operatingsystemmajrelease, '8') >= 0) or ($::operatingsystem == 'Ubuntu' and versioncmp($::operatingsystemrelease, '15.04') >= 0) {
+      if ($::operatingsystem == 'Debian' and versioncmp($::operatingsystemmajrelease, '8') >= 0) or ($::operatingsystem == 'Ubuntu' and versioncmp($::operatingsystemrelease, '16.04') >= 0) {
         $detach_service_in_init = false
       } else {
         $detach_service_in_init = true
